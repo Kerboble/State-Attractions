@@ -1,0 +1,356 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    color: rgb(87, 86, 86)
+}
+
+.show-states {
+  height: 2vh;
+  font-family: lobster;
+  color: tomato;
+  font-size: 3em;
+  text-align: center;
+}
+
+.state-outline {
+    fill: rgb(136, 133, 133);
+    border: none;
+    cursor: pointer;
+    transition: 0.15s;
+    stroke-width: 1;
+}
+
+.state-name {
+  fill: white
+}
+
+.state-outline:hover {
+    fill: tomato
+}
+
+.map-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.logo-and-name {
+  display: flex;
+  text-align: center;
+}
+
+svg {
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.logo {
+    height: 75px;
+    width: 75px;
+    margin-left: 2vh;
+}
+
+.logo-period {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+footer{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;  
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12);    
+    color: tomato;
+    font-size: 25px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 8vh;
+    padding-bottom: 5px;
+}
+.random-location {
+  margin-right: 2vw;
+}
+
+li {
+    list-style: none;
+    font-size: 2rem;
+}
+
+a:link { 
+text-decoration: none; 
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 5vh;
+  font-size: 50px;
+}
+
+main {
+    height: 100vh;
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    color: tomato;
+}
+
+.top-ten{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.info-button, .random-location {
+    height: 50px;
+    width: 150px;
+    border: 2px solid tomato;
+    border-radius: 10px;
+    background-color: white;
+    color: tomato;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2vh;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.surprise-button {
+padding: 0;
+margin-bottom: 1vh;
+}
+
+.ten {
+    color: tomato
+}
+
+.info-button:hover, .random-location:hover{
+    background-color: tomato;
+    color: white;
+    border: none;
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: tomato;
+}
+
+main {
+    height: 100%;
+}
+.attraction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 25%;
+    padding-left: 10px;
+    margin-top: 10vh;
+    padding-right:5vh;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin-right: 5vh;
+    margin-left: 5vh;
+    border-radius: 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12);    
+    padding-bottom: 2vh;
+    text-align: left;
+    padding-top: 2vh;
+}
+
+.attraction-information{
+    display: flex;
+    margin-left: 2vh;
+    flex-direction: column;
+}
+
+#attraction-photo:hover {
+    border-radius: 1vh;
+
+}
+
+#attraction-photo{
+    height: 21vh;
+    width: 21vw;
+    border: none;
+    border-radius: 5vh;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s
+}
+
+.location-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.location-information {
+  font-size: 1vw;
+  position: relative;
+}
+
+.wrapper{
+	width: 100%;
+
+}
+
+
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.container > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border: none;
+    border-radius: 5px;
+}
+
+/* Grid */
+.container {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
+	  grid-auto-flow: dense; /* Fill all spaces with fitted images */
+    cursor: pointer;
+}
+
+.horizontal {
+	grid-column: span 2;
+}
+
+.vertical {
+	grid-row: span 2;
+}
+
+.big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+@keyframes grow-and-shrink {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .map-container {
+    animation: grow-and-shrink 2000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  /* ...and then apply it: */
+  h1, header{
+    animation: slide-in 1000ms;
+  }
+
+  @keyframes drop-in {
+    from {
+      transform:
+        rotate(-30deg) translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform:
+        rotate(0deg) translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .container  {
+    animation: drop-in 1000ms;
+  }
+    
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+
+  .state-outline:hover, .state-icon:hover, .logo-period {
+    animation:
+      bounce 700ms
+      alternate infinite
+      cubic-bezier(.2, .65, .6, 1);
+  }
+
+
+/* Media Queries */
+
+@media screen and (min-width: 1024px){
+	.wrapper{
+		width: 960px;
+		margin: 0 auto;
+	}
+}
+
+
+.state-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-bottom: -0.5vh;
+  padding-left: 10px;
+}
+
+
+.attraction {
+  opacity: 0;
+  transition: all 1s;
+  transform: translateX(-100%);
+  filter: blur(5px);
+}
+
+.show {
+opacity: 1;
+transform: translateX(0);
+filter: blur(0);
+}
