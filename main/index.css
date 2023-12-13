@@ -6,7 +6,11 @@ body{
     margin: 0;
     padding: 0;
     font-family: Roboto;
-    color: rgb(87, 86, 86)
+    color: rgb(173, 169, 169)
+}
+
+.night-mode-body {
+  background-color:  rgb(49, 49, 49);
 }
 
 .show-states {
@@ -17,16 +21,25 @@ body{
   text-align: center;
 }
 
+
+
 .state-outline {
-    fill: rgb(136, 133, 133);
+    fill: rgb(107, 104, 104);
     border: none;
     cursor: pointer;
     transition: 0.15s;
-    stroke-width: 1;
+    stroke-width: 2;
+}
+
+.night-mode-outline {
+  stroke:tomato;
+  color: white;
 }
 
 .state-name {
-  fill: white
+  fill: rgb(255, 252, 252);
+  height: 10px;
+  width: 10px;
 }
 
 .state-outline:hover {
@@ -122,10 +135,10 @@ span{
 }
 
 
-.info-button, .random-location {
-    height: 50px;
-    width: 150px;
-    border: 2px solid tomato;
+.info-button, .random-location, .toggler-button {
+    height: 75px;
+    width: 175px;
+    border: 4px solid tomato;
     border-radius: 10px;
     background-color: white;
     color: tomato;
@@ -134,6 +147,8 @@ span{
     margin-top: 2vh;
     transition: all 0.2s;
     text-align: center;
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 .surprise-button {
@@ -141,11 +156,15 @@ padding: 0;
 margin-bottom: 1vh;
 }
 
+
+.dark-button {
+  background-color: rgb(107, 104, 104);
+}
 .ten {
     color: tomato
 }
 
-.info-button:hover, .random-location:hover{
+.info-button:hover, .random-location:hover, .toggler-button:hover{
     background-color: tomato;
     color: white;
     border: none;

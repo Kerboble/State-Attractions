@@ -1,0 +1,48 @@
+
+
+
+
+locationHTML = ''
+
+  locations.forEach((location) => {
+
+    locationHTML += `<div class="attraction">
+    <div class="attraction-photo">
+        <img src="${location.photo}" alt="" id="attraction-photo">
+    </div>
+    <div class="attraction-information">
+        <div class="location-name">
+            <div id="location-name">
+            <h2>${location.name}</h2>
+            </div>
+            <div class="specific-location">
+            <h4>${location.location}</h4>
+            </div>
+        </div>
+        <div class="location-information">
+            <p>${location.description}</p>
+        </div>
+        <a href="${location.link}" target="_blank">
+            <input type="button" value="More Information" class="info-button">
+        </a>
+    </div>
+    </div>`
+    
+    document.querySelector('main').innerHTML = locationHTML;
+    })
+     
+
+    //scrolling effect
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show')
+            } else {
+                entry.target.classList.remove('show')
+            }
+        })
+    })
+    
+    const attractionElements = document.querySelectorAll('.attraction');
+    attractionElements.forEach((el) => observer.observe(el));

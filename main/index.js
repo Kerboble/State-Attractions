@@ -1,4 +1,4 @@
-// these have to be external from the loop because it throws and error when they are included???
+// these have to be external from the loop because it throws an error when they are included???
 
 document.querySelector('.Wisconsin').addEventListener('click', ()=> {
     window.location = '/Wisconsin/index.html'
@@ -90,6 +90,7 @@ const states = [
   ];
   
  
+//when a state is clicked on it'll open their respective path
 states.forEach((state) => {
     document.querySelector(`.${state.name}`).addEventListener('click', () =>{
         window.location = `${state.path}`
@@ -98,38 +99,92 @@ states.forEach((state) => {
     
 
 
-
+//if mouse is hovering over a state it'll show the name of the state
 states.forEach((state) => {
     document.querySelector(`.${state.name}`).addEventListener('mouseover', ()=>{
         document.querySelector('.show-states').innerHTML = `${state.name}`
     })
 })
 
-//if mouse is hovering over a state it'll show the name of the state
+// if mouse is not hovering the div will be empty
 states.forEach((state) => {
     document.querySelector(`.${state.name}`).addEventListener('mouseout', ()=>{
         document.querySelector('.show-states').innerHTML = '';
     })
 })
 
-// if mouse is not hovering the div will be empty
-
+// vermont didn't play nice with loop so I made an extra event listener for it
 document.querySelector('.Vermont').addEventListener('mouseout', ()=>{
     document.querySelector('.show-states').innerHTML = ''
 });
 
-/*localStorage.getItem('bodyColor')
 
-const bodyColor = document.body
+// night mode 
 
-document.querySelector('.dark-mode-button').addEventListener('click', () => {
-    localStorage.setItem('bodyColor', (bodyColor.classList.add('dark-mode')))
-
-})
-
-document.querySelector('.light-mode-button').addEventListener('click', () => {
-    bodyColor.classList.remove('dark-mode')
-    localStorage.setItem('bodyColor', (bodyColor.classList))
-})*/
+const toggleButton = document.getElementById('toggler');
+const stateOutline = document.querySelectorAll('path');
+const surpriseBtn = document.getElementById('surpriseBtn')
 
 
+
+    function toggler() {
+      const body = document.body;
+      const isLightMode = body.classList.contains('light-mode');
+
+      if (isLightMode) {
+        body.classList.remove('light-mode');
+        body.classList.add('night-mode-body');
+        toggleButton.innerHTML = 'Light Mode';
+        toggleButton.classList.add('dark-button')
+        surpriseBtn.classList.add('dark-button')
+        //looping through the state outlines and applying night-mode to them
+
+        stateOutline.forEach(outline => {
+            outline.classList.add('night-mode-outline');
+          });
+        //saving the css changes to local storage  
+
+        localStorage.setItem('mode', 'night');
+      } else {
+        body.classList.remove('night-mode-body');
+        body.classList.add('light-mode');
+        stateOutline.forEach(outline => {
+            outline.classList.remove('night-mode-outline');
+          });
+        toggleButton.classList.remove('dark-button')
+        surpriseBtn.classList.remove('dark-button')
+        toggleButton.innerHTML = 'Night Mode';
+        localStorage.setItem('mode', 'light');
+      }
+    }
+
+    function applyModePreference() {
+      const body = document.body;
+      const mode = localStorage.getItem('mode');
+
+      if (mode === 'night') {
+        body.classList.remove('light-mode');
+        body.classList.add('night-mode-body');
+        stateOutline.forEach(outline => {
+            outline.classList.add('night-mode-outline');
+          });
+        toggleButton.innerHTML = 'Light Mode';
+        toggleButton.classList.add('dark-button')
+        surpriseBtn.classList.add('dark-button')
+      } else {
+        body.classList.remove('night-mode');
+        body.classList.remove('night-mode-body');
+        stateOutline.forEach(outline => {
+            outline.classList.remove('night-mode-outline');
+          });
+        toggleButton.classList.remove('dark-button')
+        surpriseBtn.classList.remove('dark-button')
+        body.classList.add('light-mode');
+        toggleButton.innerHTML = 'Night Mode';
+      }
+    }
+
+    toggleButton.addEventListener('click', toggler);
+
+    // Apply saved mode preference on page load
+    applyModePreference();
