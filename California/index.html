@@ -8,9 +8,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="/main/globe (2).png" />
 </head>
 <body>
+    <script>
+        const selectedTheme = localStorage.getItem('mode') 
+    </script>
+
     <header>
-        <li> <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a></li>
-   </header>
+        <div class="logo-and-name">
+            <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a>
+            <p>State Attractions</p>
+        </div>
+        
+         <div class="surprise-button">
+            <button id="toggler" class="light-mode toggler-button">night-mode</button>
+        </div>
+    </header>
     <h1>Top <span class="ten">10</span> Attractions in California <img class="state-icon" src="/California/images/hollywood.png"></h1>
     <div class="wrapper">
         <div class="container">
@@ -31,5 +42,6 @@
     </main>
 
 <script src="/California/index.js"> </script>
+<script src="/dark-mode.js"></script>
 </body>
 </html>

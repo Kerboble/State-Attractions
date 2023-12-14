@@ -116,3 +116,6 @@ const locations = [
     
     const attractionElements = document.querySelectorAll('.attraction');
     attractionElements.forEach((el) => observer.observe(el));
+
+    
+  

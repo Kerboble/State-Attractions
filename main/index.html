@@ -16,6 +16,11 @@
     
 </head>
 <body>
+    <!-- stops flickering of dark to light mode upon refreshing -->
+    <script>
+        const selectedTheme = localStorage.getItem('mode') 
+    </script>
+
     <header>
         <div class="logo-and-name">
             <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a>
@@ -26,10 +31,6 @@
             <button id='surpriseBtn' class="random-location night-mode-button">Surpise me!</button>
             <button id="toggler" class="light-mode toggler-button">night-mode</button>
         </div>
-          <!--<div class="dark-light-buttons">
-            <button class="dark-mode-button"> Dark Mode</button>
-            <button class="light-mode-button">Light Mode</button>
-         </div> -->
     </header>
     <main>
         <h1><span>C</span>hoose a <span>S</span>tate<img src="/main/globe (2).png" class="logo-period"></h1>

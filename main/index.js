@@ -1,3 +1,4 @@
+
 // these have to be external from the loop because it throws an error when they are included???
 
 document.querySelector('.Wisconsin').addEventListener('click', ()=> {
@@ -15,6 +16,8 @@ document.querySelector('.Virginia').addEventListener('click', ()=> {
 document.querySelector('.West-Virginia').addEventListener('click', ()=> {
     window.location = '/West-Virginia/index.html'
 });
+
+//mouse over to show state as a text above map
 
 document.querySelector('.Virginia').addEventListener('mouseover', ()=>{
     document.querySelector('.show-states').innerHTML = 'Virginia'
@@ -89,7 +92,7 @@ const states = [
     { name: 'Wyoming', path: '/Wyoming/index.html' },
   ];
   
- 
+
 //when a state is clicked on it'll open their respective path
 states.forEach((state) => {
     document.querySelector(`.${state.name}`).addEventListener('click', () =>{
@@ -122,7 +125,7 @@ document.querySelector('.Vermont').addEventListener('mouseout', ()=>{
 // night mode 
 
 const toggleButton = document.getElementById('toggler');
-const stateOutline = document.querySelectorAll('path');
+const stateOutline = document.querySelectorAll('.state-outline');
 const surpriseBtn = document.getElementById('surpriseBtn')
 
 
@@ -137,11 +140,13 @@ const surpriseBtn = document.getElementById('surpriseBtn')
         toggleButton.innerHTML = 'Light Mode';
         toggleButton.classList.add('dark-button')
         surpriseBtn.classList.add('dark-button')
+
         //looping through the state outlines and applying night-mode to them
 
         stateOutline.forEach(outline => {
             outline.classList.add('night-mode-outline');
           });
+
         //saving the css changes to local storage  
 
         localStorage.setItem('mode', 'night');

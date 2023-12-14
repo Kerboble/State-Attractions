@@ -9,9 +9,20 @@
 
 </head>
 <body>
+    <script>
+        const selectedTheme = localStorage.getItem('mode') 
+    </script>
+
     <header>
-        <li> <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a></li>
-   </header>
+        <div class="logo-and-name">
+            <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a>
+            <p>State Attractions</p>
+        </div>
+        
+         <div class="surprise-button">
+            <button id="toggler" class="light-mode toggler-button">night-mode</button>
+        </div>
+    </header>
     <div class="top-ten">
         <h1>Top <span class="ten">10</span> Attractions in New Mexico 
         <img class="state-icon" src="/New-Mexico/images/ufo.png"></h1>
@@ -35,5 +46,6 @@
     </main>
 
 <script src="/New-Mexico/index.js"></script>
+<script src="/dark-mode.js"></script>
 </body>
 </html>

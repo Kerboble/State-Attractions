@@ -61,6 +61,7 @@ body{
 svg {
   height: 100%;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .logo {
@@ -82,7 +83,8 @@ footer{
     bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: 0.6rem;
+    font-size: 1.5rem;
+    color:tomato;
 }
 
 header{
@@ -95,7 +97,7 @@ header{
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    height: 8vh;
+    height: 150px;
     padding-bottom: 5px;
 }
 .random-location {
@@ -158,7 +160,8 @@ margin-bottom: 1vh;
 
 
 .dark-button {
-  background-color: rgb(107, 104, 104);
+  background-color: rgb(49, 49, 49);
+  color: tomato;
 }
 .ten {
     color: tomato
@@ -186,7 +189,7 @@ main {
     padding-left: 10px;
     margin-top: 10vh;
     padding-right:5vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(253, 253, 253);
     width: 80%;
     margin-right: 5vh;
     margin-left: 5vh;
@@ -195,6 +198,10 @@ main {
     padding-bottom: 2vh;
     text-align: left;
     padding-top: 2vh;
+}
+
+.attraction-dark {
+  background-color: rgb(49, 49, 49);
 }
 
 .attraction-information{

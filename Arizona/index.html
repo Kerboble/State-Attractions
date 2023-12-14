@@ -9,9 +9,20 @@
 
 </head>
 <body>
+    <script>
+        const selectedTheme = localStorage.getItem('mode') 
+    </script>
+
     <header>
-        <li> <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a></li>
-   </header>
+        <div class="logo-and-name">
+            <a href="/main/index.html"><img src="/main/globe (2).png" class="logo"></a>
+            <p>State Attractions</p>
+        </div>
+        
+         <div class="surprise-button">
+            <button id="toggler" class="light-mode toggler-button">night-mode</button>
+        </div>
+    </header>
     <h1>Top <span class="ten">10</span> Attractions in Arizona <img class="state-icon" src="/Arizona/images/grand-canyon.png"></h1>
     <div class="wrapper">
         <div class="container">
@@ -32,6 +43,7 @@
     </main>
 
 <script src="/Arizona/index.js"></script>
+<script src="/dark-mode.js"></script>
 </body>
 </html>
 
