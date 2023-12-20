@@ -85,8 +85,7 @@ states.forEach((state) => {
 
 
 
-// night mode 
-
+// night mode, setting up some variables
 const toggleButton = document.getElementById('toggler');
 const stateOutline = document.querySelectorAll('.state-outline');
 const surpriseBtn = document.getElementById('surpriseBtn')
