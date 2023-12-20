@@ -1,47 +1,5 @@
 
-// these have to be external from the loop because it throws an error when they are included???
-
-document.querySelector('.Wisconsin').addEventListener('click', ()=> {
-    window.location = '/Wisconsin/index.html'
-});
-
-document.querySelector('.Vermont').addEventListener('click', ()=> {
-    window.location = '/Vermont/index.html'
-});
-
-document.querySelector('.Virginia').addEventListener('click', ()=> {
-    window.location = '/Virginia/index.html'
-});
-
-document.querySelector('.West-Virginia').addEventListener('click', ()=> {
-    window.location = '/West-Virginia/index.html'
-});
-
-//mouse over to show state as a text above map
-
-document.querySelector('.Virginia').addEventListener('mouseover', ()=>{
-    document.querySelector('.show-states').innerHTML = 'Virginia'
-});
-
-document.querySelector('.West-Virginia').addEventListener('mouseover', ()=>{
-    document.querySelector('.show-states').innerHTML = 'West-Virginia'
-});
-
-document.querySelector('.Wisconsin').addEventListener('mouseover', ()=>{
-    document.querySelector('.show-states').innerHTML = 'Wisconsin'
-});
-
-document.querySelector('.Vermont').addEventListener('mouseover', ()=>{
-    document.querySelector('.show-states').innerHTML = 'Vermont'
-});
-
-
-document.querySelector('.random-location').addEventListener('click', ()=>{
-    randomNumber = Math.ceil(Math.random() * 49)
-    window.location = `${states[randomNumber].path}`
-})
-
-//This loops through each state object, making the code more manipulative
+//The variable states contains an array of objects that has the states name and file path.
 
 const states = [
     { name: 'Alabama', path: '/Alabama/index.html' },
@@ -88,10 +46,19 @@ const states = [
     { name: 'Tennessee', path: '/Tennessee/index.html' },
     { name: 'Texas', path: '/Texas/index.html' },
     { name: 'Utah', path: '/Utah/index.html' },
-    { name: 'Washington', path: '/Washington/index.html' },
+    { name: 'Vermont', path: '/Vermont/index.html'},
+    { name: 'Virginia', path: '/Virginia/index.html'},
+    { name: 'Washington', path: '/Washington/index.html'},
+    { name: 'West-Virginia', path: '/West-Virginia/index.html'},
+    { name: 'Wisconsin', path: '/Wisconsin/index.html'},
     { name: 'Wyoming', path: '/Wyoming/index.html' },
   ];
   
+  // picks a random number 0 - 50 and opens to that states path
+document.querySelector('.random-location').addEventListener('click', ()=>{
+  randomNumber = Math.floor(Math.random() * 51)
+  window.location = `${states[randomNumber].path}`
+})
 
 //when a state is clicked on it'll open their respective path
 states.forEach((state) => {
@@ -116,10 +83,6 @@ states.forEach((state) => {
     })
 })
 
-// vermont didn't play nice with loop so I made an extra event listener for it
-document.querySelector('.Vermont').addEventListener('mouseout', ()=>{
-    document.querySelector('.show-states').innerHTML = ''
-});
 
 
 // night mode 
@@ -148,13 +111,13 @@ const surpriseBtn = document.getElementById('surpriseBtn')
           });
 
         //saving the css changes to local storage  
-
         localStorage.setItem('mode', 'night');
-      } else {
+        
+        } else {
         body.classList.remove('night-mode-body');
         body.classList.add('light-mode');
         stateOutline.forEach(outline => {
-            outline.classList.remove('night-mode-outline');
+          outline.classList.remove('night-mode-outline');
           });
         toggleButton.classList.remove('dark-button')
         surpriseBtn.classList.remove('dark-button')
@@ -170,18 +133,22 @@ const surpriseBtn = document.getElementById('surpriseBtn')
       if (mode === 'night') {
         body.classList.remove('light-mode');
         body.classList.add('night-mode-body');
+
         stateOutline.forEach(outline => {
-            outline.classList.add('night-mode-outline');
+          outline.classList.add('night-mode-outline');
           });
+
         toggleButton.innerHTML = 'Light Mode';
         toggleButton.classList.add('dark-button')
         surpriseBtn.classList.add('dark-button')
       } else {
         body.classList.remove('night-mode');
         body.classList.remove('night-mode-body');
+
         stateOutline.forEach(outline => {
-            outline.classList.remove('night-mode-outline');
+          outline.classList.remove('night-mode-outline');
           });
+
         toggleButton.classList.remove('dark-button')
         surpriseBtn.classList.remove('dark-button')
         body.classList.add('light-mode');
