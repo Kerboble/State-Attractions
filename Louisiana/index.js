@@ -104,7 +104,7 @@ locationHTML = ''
     })
      
 
-    //scrolling effect
+    //scrolling effect  -- https://www.youtube.com/watch?v=T33NN_pPeNI 
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
