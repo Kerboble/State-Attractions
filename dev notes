@@ -1,0 +1,53 @@
+
+Entry 1
+12/11/23 
+Start: 12:00pm
+End: 4pm
+
+-I have decided to make a travel app that provides the top 10 attractions in every state of America. I made a rough sketch of what the homepage will look like and found an SVG from https://simplemaps.com/resources/svg-us that I am going to be using. 
+
+Entry 2
+12/12/23
+Start: 7:38am
+End: 1:12pm
+
+-Extrapolated on the theme of my main page and subsequent pages of each state. Made an outline of the main page and the subsequent pages on figma. I also started to work on some template html, and css. 
+
+Main page design / subsequent pages design - https://www.figma.com/file/9dp0v7chDUmHxOJ3Y9obIF/Main-page?type=design&node-id=0%3A1&mode=design&t=3QlC97EZVqu               6gB9e-1
+
+Entry 3 
+12/13/23 
+Start: 12pm 
+End: 4pm
+
+-Made the objects for each of the states so that I can loop through them and display them in the html/css template I have created. This also allows me to open their paths when they are clicked on.
+
+Entry 4 
+12/14/23 
+Start: 12pm 
+End: 5pm
+
+-Completed 25 of the states and their attractions. Each state has their own html and js file. Within the JS file I created an object literal that contains the state's name, a photo of the location, a description, location within the state and a link to more information on the location.
+
+
+Entry 5 
+12/15/23 
+Start: 12pm 
+End: 5pm
+
+-Completed the last 25 states and their attractions.
+
+Entry 6 
+12/16/23 
+Start: 12pm 
+End: 4pm
+
+- Made a night-mode for the website and some extra javascript that shows the name of the state when the user is hovering over the state and made the css a little nicer.
+
+Entry 7 
+12/20/23 
+Start: 12pm 
+End: 4pm
+
+-Made code more dry and fixed some bugs involving some states and their interactiveness. Ended up missing a state so I had to finish that up. Went over the code and made comments so anyone looking at the code does not have to guess what's going on.
+
