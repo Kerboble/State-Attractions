@@ -90,7 +90,7 @@ const toggleButton = document.getElementById('toggler');
 const stateOutline = document.querySelectorAll('.state-outline');
 const surpriseBtn = document.getElementById('surpriseBtn')
 
-
+toggleButton.addEventListener('click', toggler);
 
     function toggler() {
       const body = document.body;
@@ -155,7 +155,7 @@ const surpriseBtn = document.getElementById('surpriseBtn')
       }
     }
 
-    toggleButton.addEventListener('click', toggler);
+   
 
     // Apply saved mode preference on page load
     applyModePreference();

@@ -71,8 +71,11 @@ const locations = [
     }
   ];
 
+
+  
   locationHTML = ''
 
+  //looping through each location and adding their properties to HTML template literals to display them on the DOM.
   locations.forEach((location) => {
 
     locationHTML += `<div class="attraction">
@@ -98,7 +101,7 @@ const locations = [
     </div>`
     
     document.querySelector('main').innerHTML = locationHTML;
-    })
+    });
      
 
     //scrolling effect
