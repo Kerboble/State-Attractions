@@ -157,6 +157,8 @@ span{
 .surprise-button {
 padding: 0;
 margin-bottom: 1vh;
+height: 10vh;
+width: auto;
 }
 
 
